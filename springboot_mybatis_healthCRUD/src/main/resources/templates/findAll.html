@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ch" xmlns:th="http://www.thymeleaf.org">
+<div th:each="setmeal:${setmealList}" style="color: greenyellow">
+    套餐名字：<li th:text="${setmeal.name}"></li>
+    <div th:each="checkgroups:${setmeal.checkGroups}" style="color: skyblue">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;检查组名字：<span th:text="${checkgroups.name}" th:background="green"></span>
+            <div th:each="checkItems:${checkgroups.checkItems}" style="color: burlywood">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;检查项名字：<span th:text="${checkItems.name}"></span>
+            </div>
+    </div>
+</div>
+
+</html>
+
